@@ -1,6 +1,6 @@
 <template>
     <div class="header-container v-flex align-center">
-        <div class="logo v-flex">zoomzb</div>
+        <div class="logo v-flex">Linkshare</div>
         <div class="search">
             <span class="search-wrap">
             	<span class="input-prefix"><i class="fa fa-search"></i></span>
@@ -36,11 +36,6 @@ export default {
 		margin: 0 auto;
 		width: 900px;
 	}
-
-	.search-wrap {
-		
-	}
-
 	.input-prefix {
 		position: absolute;
 		left: 15px;
