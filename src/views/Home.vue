@@ -9,6 +9,8 @@
       <div class="banner-sub-title">分享一些不错的资源</div>
     </div>
     <Search />
+    <!-- main container -->
+    <MainNav />
     <!-- <SubNav /> -->
   </div>
 </template>
@@ -19,6 +21,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import Header from '@/components/Header2.vue'
 import Search from '@/components/Search.vue'
 import SubNav from '@/components/SubNav.vue'
+import MainNav from '@/components/MainNav.vue'
 
 export default {
   name: 'Home',
@@ -26,7 +29,8 @@ export default {
     HelloWorld,
     Header,
     Search,
-    SubNav
+    SubNav,
+    MainNav
   }
 }
 </script>
