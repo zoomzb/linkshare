@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div id="app">
     <router-view/>
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> -->
@@ -14,7 +14,7 @@
   color: #2c3e50;
 }
 
-#nav {
+#app {
   a {
     font-weight: bold;
     color: #2c3e50;

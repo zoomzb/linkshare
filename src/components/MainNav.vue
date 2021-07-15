@@ -74,41 +74,59 @@ export default {
 }
 </script>
 <style lang="less">
-	.main-container .right {
-        width: 20%;
-        background-color: #ff5722;
-        color: #ffffff;
-        >ul {
-            width: 100%;
-            @include clearfix;
-            >li {
-                width: 100%;
-                border: 1px solid #ffffff;
-                cursor: pointer; // float: left;
-                color: 20px;
-                text-align: center;
-                line-height: 60px;
-                &:hover {
-                    background-color: #ff9800;
-                }
-                >ul {
-                    width: 100%;
-                    background: red;
-                    li{
-                        &:hover{
-                            background: #c31111;
-                        }
-                    }
-                }
-            }
-            .active {
-                background-color: #ff9800;
-            }
-        }
-    }
+	.main-container {
+		margin-top: 150px;
+		max-width: 1300px;
+		margin: 150px auto 90px;
+		overflow: hidden;
+		box-sizing: border-box;
+		.left {
+			float: left;
+			width: 980px;
+		}
+		.right {
+			float: right;
+			width: 20%;
+			background-color: #ff5722;
+			color: #ffffff;
+			>ul {
+				width: 100%;
+				// @include clearfix;
+				&::after {
+					display: block;
+					content: "";
+					clear: both;
+				}
+				>li {
+					width: 100%;
+					border: 1px solid #ffffff;
+					cursor: pointer; // float: left;
+					color: 20px;
+					text-align: center;
+					line-height: 60px;
+					&:hover {
+						background-color: #ff9800;
+					}
+					>ul {
+						width: 100%;
+						background: red;
+						li{
+							&:hover{
+								background: #c31111;
+							}
+						}
+					}
+				}
+				.active {
+					background-color: #ff9800;
+				}
+			}
+		}
+
+	}
 
 	
-
-
+	
+	
 
 </style>

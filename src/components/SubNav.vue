@@ -92,8 +92,10 @@ export default {
 }
 </script>
 <style scoped>
-	@media screen and (min-width: 959px) .filter-subnav {
-	    padding-top: 32px;
+	@media screen and (min-width: 959px)  {
+		.filter-subnav{
+			padding-top: 32px;
+		}
 	}
 
 	.filter-subnav {
@@ -102,26 +104,30 @@ export default {
 	    padding-top: 16px;
 	}
 
-	@media (min-width: 1200px)
-	.container-fluid {
-	    padding-left: 72px;
-	    padding-right: 72px;
+	@media (min-width: 1200px){
+		.container-fluid {
+			padding-left: 72px;
+			padding-right: 72px;
+		}
 	}
 
-	@media (min-width: 768px)
-	.container-fluid {
-	    padding-left: 32px;
-	    padding-right: 32px;
+	@media (min-width: 768px){
+		.container-fluid {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
 	}
+
 	.container-fluid {
 	    padding-left: 20px;
 	    padding-right: 20px;
 	}
 
-	@media screen and (min-width: 1300px)
-	.filter-views {
-	    -ms-flex: 0 0 150px;
-	    flex: 0 0 150px;
+	@media screen and (min-width: 1300px){
+		.filter-views {
+			-ms-flex: 0 0 150px;
+			flex: 0 0 150px;
+		}
 	}
 
 	.filter-views {

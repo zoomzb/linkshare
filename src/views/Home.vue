@@ -8,10 +8,15 @@
       <div class="banner-title">奇趣实用网络资源导航，助你学习、工作和生活</div>
       <div class="banner-sub-title">分享一些不错的资源</div>
     </div>
+
     <Search />
-    <!-- main container -->
+
+    <!-- main navigation -->
     <MainNav />
+
+    <!-- sub navigation -->
     <!-- <SubNav /> -->
+
   </div>
 </template>
 
@@ -34,18 +39,22 @@ export default {
   }
 }
 </script>
-<style>
-  .home::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    content:'';
-    height: 220px;
-    z-index: -1;
-    border-radius: 0 0 20% 20%;
-    background:linear-gradient(0deg,#1A6EFD,#3A81FA) 0% 100% no-repeat;
+<style lang="less">
+  .home{
+    height: 100vh;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      content:'';
+      height: 220px;
+      z-index: -1;
+      border-radius: 0 0 20% 20%;
+      background:linear-gradient(0deg,#1A6EFD,#3A81FA) 0% 100% no-repeat;
+    }
   }
+
   .banner {
     height: 80px;
     width: 100%;
