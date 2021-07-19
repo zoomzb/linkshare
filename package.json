@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "cd ./server npm i & vue-cli-service build & node server/bin/www"
+    "build": "vue-cli-service build & node server/bin/www"
   },
   "dependencies": {
     "axios": "^0.21.1",
