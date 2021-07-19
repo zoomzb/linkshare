@@ -1,7 +1,29 @@
 <template>
     <div class="main-container">
 		<div class="left">
-			<div class="res-item">
+			<div class="res-item" v-for="(item,index) in linkList" :key="index">
+				<div class="hover-move">
+					<div class="res-main">
+						<div class="res-img">
+							<img :src="item.imgUrl">
+						</div>
+						<div class="res-content">
+							<div class="res-content-title">{{item.title}}</div>
+							<div class="res-content-desc">{{item.desc}}</div>
+							<div class="res-content-footer">
+								<div class="res-url">{{item.resUrl}}</div>
+								<div class="res-tag">
+									<div class="res-tag-content" v-for="(item2,index2) in item.tags.split(',')" :key="index2">{{item2}}</div>
+									<!-- <div class="res-tag-content">PLAX</div>
+									<div class="res-tag-content">PLAX</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="res-item">
 				<div class="hover-move">
 					<div class="res-main">
 						<div class="res-img">
@@ -87,29 +109,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="res-item">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img src="https://linkfind.cn/api/image/1625552806140.png">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">PALX</div>
-							<div class="res-content-desc">免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧</div>
-							<div class="res-content-footer">
-								<div class="res-url">palx.jxnblk.com</div>
-								<div class="res-tag">
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="right">
 			<ul>
@@ -128,6 +128,7 @@
     </div>
 </template>
 <script>
+import util from '@/libs/util.js';
 export default {
     name: 'MainNav',
 	data () {
@@ -152,7 +153,13 @@ export default {
 				name: '导航5',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
-			}]
+			}],
+
+			sortFlag:false,
+			page:1,
+			pageSize:10,
+			linkList:[
+			],
 		}
 	},
 	methods: {
@@ -170,7 +177,28 @@ export default {
 		},
 		doThis: function(index) {
 			alert(index)
-		}
+		},
+		getAllLinkInfo(){
+            var param = {
+                page:this.page,
+                pageSize:this.pageSize,
+                sort:this.sortFlag?1:-1
+            };
+            this.$axios.get("/link/list",{params:param})
+            .then((res)=>{
+              var resData = res.data.result.list;
+              resData.forEach((item,index)=>{
+                item.createTime = util.formatDate(new Date(item.createTime));
+              });
+              this.linkList = res.data.result.list;
+            })
+            .catch((err)=>{
+              console.log(err)
+            });
+        },
+	},
+	created(){
+		this.getAllLinkInfo();
 	}
 
 }
@@ -278,9 +306,10 @@ export default {
 			}
 		}
 		.right {
-			position: flex;
+			user-select: none;
 			margin-top: 20px;
 			width: 20%;
+			height: 800px;
 			background-color: #ff5722;
 			color: #ffffff;
 			>ul {

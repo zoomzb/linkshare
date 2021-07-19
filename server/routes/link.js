@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Movies = require('../models/movies');
+var Link = require('../models/link');
 var Util = require('../util/util');
 
 //查询链接资源列表数据
@@ -9,10 +9,10 @@ var Util = require('../util/util');
  */
 router.get("/list", function (req, res, next) {
     console.log('start request process.')
-    let page = parseInt(req.param("page"));
-    let pageSize = parseInt(req.param("pageSize"));
-    // let priceLevel = req.param("priceLevel");
-    let sort = req.param("sort");
+    let page = parseInt(req.params["page"]);
+    let pageSize = parseInt(req.params["pageSize"]);
+    // let priceLevel = req.params["priceLevel"];
+    let sort = req.params["sort"];
     let skip = (page-1)*pageSize;
     // let priceGt = '';
     // let priceLte = '';
@@ -33,10 +33,10 @@ router.get("/list", function (req, res, next) {
     //         }
     //     }
     // }
-    let moviesModel = Movies.find(params).skip(skip).limit(pageSize);
-    // console.log(moviesModel)
-    moviesModel.sort({'createTime':sort});
-    moviesModel.exec(function (err, doc) {
+    let linkModel = Link.find(params).skip(skip).limit(pageSize);
+    // console.log(linkModel)
+    linkModel.sort({'createTime':sort});
+    linkModel.exec(function (err, doc) {
         console.log(doc)
         if(err){
             res.json({
@@ -58,10 +58,10 @@ router.get("/list", function (req, res, next) {
 
 router.get("/detail", function (req, res, next) {
     console.log('start request process.')
-    // let page = parseInt(req.param("page"));
-    // let pageSize = parseInt(req.param("pageSize"));
-    // let priceLevel = req.param("priceLevel");
-    let pId = req.param("pId");
+    // let page = parseInt(req.params["page"]);
+    // let pageSize = parseInt(req.params["pageSize"]);
+    // let priceLevel = req.params["priceLevel"];
+    let pId = req.params["pId"];
     // let skip = (page-1)*pageSize;
     // let priceGt = '';
     // let priceLte = '';
@@ -76,13 +76,13 @@ router.get("/detail", function (req, res, next) {
     //         case '4':priceGt = 3000;priceLte=6000;break;
     //     }
         params = {
-            movieId: pId
+            linkId: pId
         }
     // }
-    let moviesModel = Movies.find(params);
-    // console.log(moviesModel)
-    // moviesModel.sort({'createTime':sort});
-    moviesModel.exec(function (err, doc) {
+    let linkModel = Link.find(params);
+    // console.log(linkModel)
+    // linkModel.sort({'createTime':sort});
+    linkModel.exec(function (err, doc) {
         console.log(doc)
         if(err){
             res.json({
@@ -105,33 +105,33 @@ router.get("/detail", function (req, res, next) {
 router.get("/filter", function (req, res, next) {
     console.log('start request process.')
 
-    let movieCategory = req.param("movieCategory");
-    let movieArea = req.param("movieArea");
-    let releaseYear = req.param("releaseYear");
+    let title = req.params["title"];
+    // let movieArea = req.params["movieArea"];
+    // let releaseYear = req.params[releaseYear"];
 
-    let page = parseInt(req.param("page"));
-    let pageSize = parseInt(req.param("pageSize"));
-    let sort = req.param("sort");
+    let page = parseInt(req.params["page"]);
+    let pageSize = parseInt(req.params["pageSize"]);
+    let sort = req.params["sort"];
     let skip = (page-1)*pageSize;
 
     let params = {};
-    if(!Util.isEmpty(movieCategory)){
-        params.movieCategory = eval("/"+movieCategory+"/i")
+    if(!Util.isEmpty(title)){
+        params.title = eval("/"+title+"/i")
     }
-    if(!Util.isEmpty(movieArea)){
-        params.movieArea = movieArea;
-    }
-    if(!Util.isEmpty(releaseYear)){
-         if(!Util.isEmpty(JSON.parse(releaseYear)["other"])){
-            params.releaseYear = {$lte:parseInt(JSON.parse(releaseYear)["other"])};
-        }else{
-            params.releaseYear = releaseYear;
-        }
-    }
+    // if(!Util.isEmpty(movieArea)){
+    //     params.movieArea = movieArea;
+    // }
+    // if(!Util.isEmpty(releaseYear)){
+    //      if(!Util.isEmpty(JSON.parse(releaseYear)["other"])){
+    //         params.releaseYear = {$lte:parseInt(JSON.parse(releaseYear)["other"])};
+    //     }else{
+    //         params.releaseYear = releaseYear;
+    //     }
+    // }
 
-    let moviesModel = Movies.find(params).skip(skip).limit(pageSize);
-    moviesModel.sort({'createTime':sort});
-    moviesModel.exec(function (err, doc) {
+    let linkModel = Link.find(params).skip(skip).limit(pageSize);
+    linkModel.sort({'createTime':sort});
+    linkModel.exec(function (err, doc) {
         console.log(doc)
         if(err){
             res.json({

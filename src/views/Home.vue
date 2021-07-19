@@ -64,6 +64,7 @@ export default {
     color: #fff;
     font-size: 30px;
     flex-direction: column;
+    margin-top: 80px;
   }
   .banner .banner-sub-title {
     font-size: 20px;

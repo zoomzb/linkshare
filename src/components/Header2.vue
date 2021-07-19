@@ -38,9 +38,11 @@ export default {
 </script>
 <style lang="less">
 	.nav {
-		position: sticky;
+		// position: sticky;
+		position: fixed;
 		top: 0;
 		height: 80px;
+		width: 100%;
 		z-index: 1000;
 		align-items: center;
 		color: #fff;

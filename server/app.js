@@ -6,15 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require("mongoose");
 var ejs = require('ejs')
-var movies = require('./routes/movies');
-var anime = require('./routes/anime');
-var drama = require('./routes/drama');
+// var movies = require('./routes/movies');
+// var anime = require('./routes/anime');
+// var drama = require('./routes/drama');
 var index = require('./routes/index');
-var goods = require('./routes/goods');
-var users = require('./routes/users');
+// var goods = require('./routes/goods');
+// var users = require('./routes/users');
+var link = require('./routes/link');
 
 //连接数据库
-mongoose.connect('mongodb://admin:123456@localhost:27017/admin?authSource=admin',{useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://admin:123456@localhost:27017/admin?authSource=admin',{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://user53951058:bob650316Z@linksharepro.mongodb.rds.aliyuncs.com:3717/linkshare?authSource=admin',{useNewUrlParser: true, useUnifiedTopology: true});
 
 let db = mongoose.connection;
 
@@ -24,6 +26,21 @@ db.once('open', function() {
 })
 
 var app = express();
+
+//express 设置允许跨域访问
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept,X-File-Name,authorization");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.header("Content-Type", "application/json;charset=utf-8");
+    res.header("X-Powered-By", ' 3.2.1');
+    res.header("Cache-Control", "no-store");
+    if (req.method == 'OPTIONS') {
+        res.sendStatus(200).end();
+    } else {
+        next();
+    }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,11 +73,12 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // });
 
 app.use('/', index);
-app.use('/movie', movies);
-app.use('/anime', anime);
-app.use('/drama', drama);
-app.use('/goods', goods);
-app.use('/users', users);
+// app.use('/movie', movies);
+// app.use('/anime', anime);
+// app.use('/drama', drama);
+// app.use('/goods', goods);
+// app.use('/users', users);
+app.use('/link', link);
 
 
 // catch 404 and forward to error handler
