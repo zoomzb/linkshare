@@ -114,9 +114,9 @@
 		<div class="right">
 			<ul>
 				<!-- 循环数据在点击调用changeli方法时将当前索引和本条数据传进去,并使用当前数据show的bool值添加或移除样式 -->
-				<li :class="[{active:item.show}]" @click="changeli(index,item)" :key="index" v-for="(item,index) in headerData">
+				<li @click="changeli(index,item)" :key="index" v-for="(item,index) in headerData">
 					<!-- 在这里打印出boll值方便查看 -->
-					{{item.name}}{{item.show}}
+						<span :class="[{active:item.show},{'category':true}]">{{item.name}}</span>
 					<!-- 判断当前这条数据的bool值如果是true就打开二级菜单,如果是false就关闭二级菜单 -->
 						<ul v-show="item.show"> 
 							<!-- 循环二级菜单数据并使用.stop阻止冒泡 -->
@@ -134,23 +134,27 @@ export default {
 	data () {
 		return {
 			headerData: [{
-				name: '导航1',
+				name: '综合资源',
+				list: ['游戏', '学习', '编程', '办公', '其他'],
+				show: false
+			}, {
+				name: '效率工具',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
 			}, {
-				name: '导航2',
+				name: '创意资源',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
 			}, {
-				name: '导航3',
+				name: '游戏资源',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
 			}, {
-				name: '导航4',
+				name: '素材资源',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
 			}, {
-				name: '导航5',
+				name: '编程资源',
 				list: ['子集', '子集', '子集', '子集', '子集'],
 				show: false
 			}],
@@ -308,10 +312,10 @@ export default {
 		.right {
 			user-select: none;
 			margin-top: 20px;
-			width: 20%;
+			width: 15%;
 			height: 800px;
-			background-color: #ff5722;
-			color: #ffffff;
+			background-color: transparent;
+			color: #0a1a33;
 			>ul {
 				width: 100%;
 				// @include clearfix;
@@ -327,21 +331,29 @@ export default {
 					color: 20px;
 					text-align: center;
 					line-height: 60px;
-					&:hover {
-						background-color: #ff9800;
+					// &:hover category {
+					// 	background-color: #dde9ff;
+					// }
+					.category {
+						display: inline-block;
+						width: 100%;
+						font-size: 28px;
+						&:hover {
+							background-color: #dde9ff;
+						}
 					}
 					>ul {
 						width: 100%;
-						background: red;
-						li{
-							&:hover{
-								background: #c31111;
-							}
-						}
+						// background: red;
+						// li{
+						// 	&:hover{
+						// 		background: #dde9ff;
+						// 	}
+						// }
 					}
 				}
 				.active {
-					background-color: #ff9800;
+					background-color: #dde9ff;
 				}
 			}
 		}
