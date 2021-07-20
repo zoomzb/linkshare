@@ -14,7 +14,7 @@ module.exports = {
     runtimeCompiler: true,
     productionSourceMap: false,
     devServer: {
-        // publicPath: Setting.publicPath
+        publicPath: '/',
         // proxy: 'http://localhost:4000'
         // proxy: process.env.NODE_ENV === 'production'
         //             ? 'https://linkshareserverpro.vercel.app'
