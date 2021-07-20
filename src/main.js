@@ -8,6 +8,9 @@ import Axios from 'axios';
 
 Vue.config.productionTip = false
 
+
+Axios.defaults.baseURL='https://api-proxy-lyart.vercel.app';
+
 Vue.prototype.$axios = Axios
 
 Vue.use(ViewUI);
