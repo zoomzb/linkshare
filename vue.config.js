@@ -24,6 +24,7 @@ module.exports = {
         {
             '/api': {
                 target: 'https://linkshareserverpro.vercel.app',
+                secure: true,
                 changeOrigin: true,
                 rewrite: path => path.replace(/^\/api/, '')
             }
