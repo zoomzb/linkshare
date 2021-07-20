@@ -16,9 +16,11 @@ module.exports = {
     devServer: {
         // publicPath: Setting.publicPath
         // proxy: 'http://localhost:4000'
-        proxy: process.env.NODE_ENV === 'production'
-                    ? 'https://linkshareserverpro.vercel.app'
-                    : 'http://localhost:4000'
+        // proxy: process.env.NODE_ENV === 'production'
+        //             ? 'https://linkshareserverpro.vercel.app'
+        //             : 'http://localhost:4000'
+
+        proxy: 'https://linkshareserverpro.vercel.app'
     },
     css: {
         loaderOptions: {
