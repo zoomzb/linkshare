@@ -7,7 +7,7 @@ const resolve = dir => require('path').join(__dirname, dir);
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
 module.exports = {
-    // publicPath: Setting.publicPath,
+    publicPath: './',
     // lintOnSave: Setting.lintOnSave,
     // outputDir: Setting.outputDir,
     // assetsDir: Setting.assetsDir,
