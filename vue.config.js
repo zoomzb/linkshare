@@ -20,15 +20,15 @@ module.exports = {
         //             ? 'https://linkshareserverpro.vercel.app'
         //             : 'http://localhost:4000'
 
-        // proxy: 
-        // {
-        //     '/api': {
-        //         target: 'https://linkshareserverpro.vercel.app',
-        //         secure: true,
-        //         changeOrigin: true,
-        //         rewrite: path => path.replace(/^\/api/, '')
-        //     }
-        // }
+        proxy: 
+        {
+            '/api': {
+                target: 'https://api-proxy-lyart.vercel.app',
+                secure: true,
+                changeOrigin: true,
+                // rewrite: path => path.replace(/^\/api/, '')
+            }
+        }
     },
     css: {
         loaderOptions: {
