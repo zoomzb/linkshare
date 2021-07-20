@@ -7,14 +7,14 @@ const resolve = dir => require('path').join(__dirname, dir);
 process.env.VUE_APP_VERSION = require('./package.json').version;
 
 module.exports = {
-    publicPath: './',
+    publicPath: '/',
     // lintOnSave: Setting.lintOnSave,
     // outputDir: Setting.outputDir,
     // assetsDir: Setting.assetsDir,
     runtimeCompiler: true,
     productionSourceMap: false,
     devServer: {
-        publicPath: './',
+        publicPath: '/',
         // proxy: 'http://localhost:4000'
         // proxy: process.env.NODE_ENV === 'production'
         //             ? 'https://linkshareserverpro.vercel.app'
