@@ -188,7 +188,7 @@ export default {
                 pageSize:this.pageSize,
                 sort:this.sortFlag?1:-1
             };
-            this.$axios.get("/link/list",{params:param})
+            this.$axios.get("/api/link/list",{params:param})
             .then((res)=>{
               var resData = res.data.result.list;
               resData.forEach((item,index)=>{
