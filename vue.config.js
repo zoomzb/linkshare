@@ -23,10 +23,12 @@ module.exports = {
         proxy: 
         {
             '/api': {
-                target: 'https://api-proxy-lyart.vercel.app',
+                target: 'http://localhost:4000',
                 secure: true,
                 changeOrigin: true,
-                // rewrite: path => path.replace(/^\/api/, '')
+                pathRewrite: {
+                    '^/api': ''
+                }
             }
         }
     },

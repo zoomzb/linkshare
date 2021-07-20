@@ -22,94 +22,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="res-item">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img src="https://linkfind.cn/api/image/1625552806140.png">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">PALX</div>
-							<div class="res-content-desc">免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧</div>
-							<div class="res-content-footer">
-								<div class="res-url">palx.jxnblk.com</div>
-								<div class="res-tag">
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="res-item">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img src="https://linkfind.cn/api/image/1625552806140.png">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">PALX</div>
-							<div class="res-content-desc">免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧</div>
-							<div class="res-content-footer">
-								<div class="res-url">palx.jxnblk.com</div>
-								<div class="res-tag">
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="res-item">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img src="https://linkfind.cn/api/image/1625552806140.png">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">PALX</div>
-							<div class="res-content-desc">免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧</div>
-							<div class="res-content-footer">
-								<div class="res-url">palx.jxnblk.com</div>
-								<div class="res-tag">
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="res-item">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img src="https://linkfind.cn/api/image/1625552806140.png">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">PALX</div>
-							<div class="res-content-desc">免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧</div>
-							<div class="res-content-footer">
-								<div class="res-url">palx.jxnblk.com</div>
-								<div class="res-tag">
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 		<div class="right">
 			<ul>
@@ -223,15 +135,17 @@ export default {
 			flex-wrap: wrap;
 			width: 980px;
 			.res-item {
+				
 				width: 25%;
 				display: flex;
 				padding: 20px;
 				.hover-move {
 					width: 100%;
 					.res-main {
+						box-shadow: 0 3px 8px 0 rgba(0,0,0,.06);
 						width: 100%;
 						padding: 20px 25px;
-						background-color: #f5f5f5;
+						// background-color: #fafafa;
 						border-radius: 5px;
 						cursor: pointer;
 						position: relative;
