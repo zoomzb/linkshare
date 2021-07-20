@@ -78,7 +78,7 @@ app.use('/', index);
 // app.use('/drama', drama);
 // app.use('/goods', goods);
 // app.use('/users', users);
-app.use('/link', link);
+app.use('/api/link', link);
 
 
 // catch 404 and forward to error handler

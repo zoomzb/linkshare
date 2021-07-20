@@ -7,7 +7,7 @@ var Util = require('../util/util');
 /*
     测试：http://localhost:4000/link/list?page=2&pageSize=8&sort=1
  */
-router.get("/api/list", function (req, res, next) {
+router.get("/list", function (req, res, next) {
     console.log('start request process.')
     let page = parseInt(req.params["page"]);
     let pageSize = parseInt(req.params["pageSize"]);
