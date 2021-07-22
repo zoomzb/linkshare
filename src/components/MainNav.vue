@@ -1,27 +1,29 @@
 <template>
     <div class="main-container">
 		<div class="left">
-			<div class="res-item" v-for="(item,index) in linkList" :key="index">
-				<div class="hover-move">
-					<div class="res-main">
-						<div class="res-img">
-							<img :src="item.imgUrl">
-						</div>
-						<div class="res-content">
-							<div class="res-content-title">{{item.title}}</div>
-							<div class="res-content-desc">{{item.desc}}</div>
-							<div class="res-content-footer">
-								<div class="res-url">{{item.resUrl}}</div>
-								<div class="res-tag">
-									<div class="res-tag-content" v-for="(item2,index2) in item.tags.split(',')" :key="index2">{{item2}}</div>
-									<!-- <div class="res-tag-content">PLAX</div>
-									<div class="res-tag-content">PLAX</div> -->
+				<div class="res-item" v-for="(item,index) in linkList" :key="index">
+			<gm-skeleton :showSpin="true" :init="false">
+					<div class="hover-move">
+						<div class="res-main">
+							<div class="res-img">
+								<img :src="item.imgUrl">
+							</div>
+							<div class="res-content">
+								<div class="res-content-title">{{item.title}}</div>
+								<div class="res-content-desc">{{item.desc}}</div>
+								<div class="res-content-footer">
+									<div class="res-url">{{item.resUrl}}</div>
+									<div class="res-tag">
+										<div class="res-tag-content" v-for="(item2,index2) in item.tags.split(',')" :key="index2">{{item2}}</div>
+										<!-- <div class="res-tag-content">PLAX</div>
+										<div class="res-tag-content">PLAX</div> -->
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+			</gm-skeleton>
 				</div>
-			</div>
 		</div>
 		<div class="right">
 			<ul>
@@ -75,7 +77,47 @@ export default {
 			page:1,
 			pageSize:10,
 			linkList:[
+				{categoryPId: 1,
+				createTime: "2021-07-19T03:27:37.157Z",
+				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
+				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				linkId: 1,
+				resUrl: "palx.jxnblk.com",
+				tags: "PALX,配色工具,调色板",
+				title: "PALX",
+				viewCount: 1500,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "2021-07-19T03:27:37.157Z",
+				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
+				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				linkId: 1,
+				resUrl: "palx.jxnblk.com",
+				tags: "PALX,配色工具,调色板",
+				title: "PALX",
+				viewCount: 1500,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "2021-07-19T03:27:37.157Z",
+				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
+				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				linkId: 1,
+				resUrl: "palx.jxnblk.com",
+				tags: "PALX,配色工具,调色板",
+				title: "PALX",
+				viewCount: 1500,
+				_id: "60f4f1295525ae65d796ed61"},
 			],
+			bgColorList:[
+				'#e0f7e8',
+				'#ccbefb',
+				'#d6d8ff'
+			],
+			colorList:[
+				'#4abf63',
+				'#a253d4',
+				'#7076e4'
+			]
 		}
 	},
 	methods: {
@@ -141,8 +183,8 @@ export default {
 				padding: 20px;
 				.hover-move {
 					width: 100%;
+					box-shadow: 0 3px 8px 0 rgba(0,0,0,.06);
 					.res-main {
-						box-shadow: 0 3px 8px 0 rgba(0,0,0,.06);
 						width: 100%;
 						padding: 20px 25px;
 						// background-color: #fafafa;
@@ -271,11 +313,24 @@ export default {
 				}
 			}
 		}
-
 	}
 
+	// 骨架屏
+	.gm-skeleton {
+		background-image: linear-gradient(90deg,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%) !important;
+		background-color: transparent !important;
+		background-size: 400% 100%;
+		animation: skeleton-loading 1.5s ease-in infinite;
+		min-height: .3rem;
+		min-width: 1rem;
+	}
 	
-	
-	
-
+	@keyframes skeleton-loading {
+		from {
+		background-position: 100% 50%;
+		}
+		to {
+		background-position: 0 50%;
+		}
+	}
 </style>
