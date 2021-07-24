@@ -2,27 +2,33 @@
     <div class="main-container">
 		<div class="left">
 				<div class="res-item" v-for="(item,index) in linkList" :key="index">
-			<gm-skeleton :showSpin="true" :init="false">
 					<div class="hover-move">
 						<div class="res-main">
-							<div class="res-img">
-								<img :src="item.imgUrl">
-							</div>
+							<gm-skeleton :showSpin="showSpin" :init="false">
+								<div class="res-img">
+									<img :src="item.imgUrl">
+								</div>
+							</gm-skeleton>
 							<div class="res-content">
-								<div class="res-content-title">{{item.title}}</div>
-								<div class="res-content-desc">{{item.desc}}</div>
+								<gm-skeleton :showSpin="showSpin" :init="false">
+									<div class="res-content-title">{{item.title}}</div>
+								</gm-skeleton>
+								<gm-skeleton :showSpin="showSpin" :init="false">
+									<div class="res-content-desc">{{item.desc}}</div>
+								</gm-skeleton>
 								<div class="res-content-footer">
-									<div class="res-url">{{item.resUrl}}</div>
-									<div class="res-tag">
-										<div class="res-tag-content" v-for="(item2,index2) in item.tags.split(',')" :key="index2">{{item2}}</div>
-										<!-- <div class="res-tag-content">PLAX</div>
-										<div class="res-tag-content">PLAX</div> -->
-									</div>
+									<gm-skeleton :showSpin="showSpin" :init="false">
+										<div class="res-url">{{item.resUrl}}</div>
+									</gm-skeleton>
+									<gm-skeleton :showSpin="showSpin" :init="false">
+										<div class="res-tag">
+											<div class="res-tag-content" v-for="(item2,index2) in item.tags.split(',')" :key="index2">{{item2}}</div>
+										</div>
+									</gm-skeleton>
 								</div>
 							</div>
 						</div>
 					</div>
-			</gm-skeleton>
 				</div>
 		</div>
 		<div class="right">
@@ -73,40 +79,132 @@ export default {
 				show: false
 			}],
 
+			showSpin:true,
 			sortFlag:false,
 			page:1,
 			pageSize:10,
 			linkList:[
 				{categoryPId: 1,
-				createTime: "2021-07-19T03:27:37.157Z",
-				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
-				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				createTime: "",
+				desc: "",
+				imgUrl: "",
 				linkId: 1,
-				resUrl: "palx.jxnblk.com",
-				tags: "PALX,配色工具,调色板",
-				title: "PALX",
-				viewCount: 1500,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
 				_id: "60f4f1295525ae65d796ed61"},
 				{categoryPId: 1,
-				createTime: "2021-07-19T03:27:37.157Z",
-				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
-				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				createTime: "",
+				desc: "",
+				imgUrl: "",
 				linkId: 1,
-				resUrl: "palx.jxnblk.com",
-				tags: "PALX,配色工具,调色板",
-				title: "PALX",
-				viewCount: 1500,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
 				_id: "60f4f1295525ae65d796ed61"},
 				{categoryPId: 1,
-				createTime: "2021-07-19T03:27:37.157Z",
-				desc: "免费！自动 UI 调色板生成器，只需要提供一个主色值，即可根据算法返回需要的整套色板，非常的方便快捷，快来试试吧",
-				imgUrl: "https://linkfind.cn/api/image/1625552806140.png",
+				createTime: "",
+				desc: "",
+				imgUrl: "",
 				linkId: 1,
-				resUrl: "palx.jxnblk.com",
-				tags: "PALX,配色工具,调色板",
-				title: "PALX",
-				viewCount: 1500,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
 				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				{categoryPId: 1,
+				createTime: "",
+				desc: "",
+				imgUrl: "",
+				linkId: 1,
+				resUrl: "",
+				tags: "",
+				title: "",
+				viewCount: 0,
+				_id: "60f4f1295525ae65d796ed61"},
+				
 			],
 			bgColorList:[
 				'#e0f7e8',
@@ -149,6 +247,7 @@ export default {
                 item.createTime = util.formatDate(new Date(item.createTime));
               });
               this.linkList = res.data.result.list;
+			  this.showSpin = false;
             })
             .catch((err)=>{
               console.log(err)
@@ -175,10 +274,11 @@ export default {
 			display: flex;
 			flex: 1;
 			flex-wrap: wrap;
+			align-content: flex-start;
 			width: 980px;
 			.res-item {
-				
 				width: 25%;
+				height: 285px;
 				display: flex;
 				padding: 20px;
 				.hover-move {
@@ -204,11 +304,12 @@ export default {
 								position: absolute;
 								top: 0;
 								left: 0;
-								user-select: none;
 								width: 100%;
+								user-select: none;
 							}
 						}
 						.res-content {
+							margin-top: 5px;
 							.res-content-title {
 								font-weight: 800;
 								font-size: 20px;
@@ -216,6 +317,7 @@ export default {
 								text-overflow: ellipsis;
 								white-space: nowrap;
 								color: black;
+								height: 30px;
 							}
 							.res-content-desc {
 								font-size: 10px;
@@ -232,11 +334,11 @@ export default {
 							.res-content-footer {
 								font-size: 8px;
 								.res-url {
-									width: fit-content;
+									// width: fit-content;
 									overflow: hidden;
-									font-weight: 500;
 									text-overflow: ellipsis;
 									white-space: nowrap;
+									font-weight: 500;
 									cursor: pointer;
 									margin-top: 10px;
 									height: 15px;
@@ -247,6 +349,7 @@ export default {
 									text-overflow: ellipsis;
 									display: flex;
 									margin-top: 10px;
+									min-height: 18px;
 									.res-tag-content:not(:first-child){
 										margin-left: 5px;
 									}
@@ -256,7 +359,6 @@ export default {
 										background-color: #e4dfdf;
 										color: black;
 										border-radius: 2px;
-										
 									}
 								}
 							}
